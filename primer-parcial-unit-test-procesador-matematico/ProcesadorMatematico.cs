@@ -10,13 +10,21 @@ namespace primer_parcial_unit_test_procesador_matematico
     {
         private int _resultado;
 
-        public void Sumar(int primerNumero, int segundoNumero)
+        public int Sumar(int primerNumero, int segundoNumero)
         {
             this._resultado = primerNumero + segundoNumero;
+
             if (this.EsNegativo())
             {
-                this._resultado = 0;
+                return this._resultado = 0;
             }
+            else
+            {
+                return this._resultado;
+            }
+
+           
+            
         }
 
         public void Dividir(int dividendo, int divisor)
