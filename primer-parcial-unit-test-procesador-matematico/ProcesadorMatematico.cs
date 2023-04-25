@@ -22,37 +22,47 @@ namespace primer_parcial_unit_test_procesador_matematico
             {
                 return this._resultado;
             }
-
-           
-            
         }
 
-        public void Dividir(int dividendo, int divisor)
+        public int Dividir(int dividendo, int divisor)
         {
-            this._resultado = dividendo / divisor;
-            if (this.EsNegativo())
+            try
             {
-                this._resultado = 0;
+                this._resultado = dividendo / divisor;
+                if (this.EsNegativo())
+                {
+                    return this._resultado = 0;
+                }
+                else
+                {
+                    return this._resultado;
+                }
+
             }
+            catch(Exception ex)
+            {
+                return -1;
+            }
+            
         }
         private bool EsNegativo()
         {
             return (this._resultado < 0);
         }
 
-        public void CalcularMayor(int primerNumero, int segundoNumero)
+        public int CalcularMayor(int primerNumero, int segundoNumero)
         {
             if (primerNumero > segundoNumero)
             {
-                this._resultado = primerNumero;
+                return this._resultado = primerNumero;
             }
             else if (primerNumero < segundoNumero)
             {
-                this._resultado = segundoNumero;
+                return this._resultado = segundoNumero;
             }
             else
             {
-                this._resultado = segundoNumero;
+                return this._resultado = segundoNumero;
             }
         }
     }
